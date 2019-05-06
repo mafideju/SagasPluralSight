@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import selectNavigationContainer from './selectors';
 import Navigation from '../../components/Navigation';
-import { requestTopics, selectTopic } from './actions';
+import { requestTopics, selectTopic, toggleDrawer } from './actions';
 
 // eslint-disable-next-line react/prefer-stateless-function
 export class NavigationContainer extends Component {
@@ -24,6 +24,7 @@ function mapDispatchToProps(dispatch) {
   return {
     requestTopics: () => dispatch(requestTopics()),
     selectTopic: (topic) => dispatch(selectTopic(topic)),
+    toggleDrawer: () => dispatch(toggleDrawer()),
   };
 }
 

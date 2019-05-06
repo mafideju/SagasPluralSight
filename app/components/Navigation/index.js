@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './styles.css';
+import AppBar from '../AppBar';
 
-function Navigation({ topics, selectTopic }) {
+function Navigation({ topics, selectTopic, toggleDrawer }) {
   const topicNodes = topics.map(topic => (
     <div
       key={topic.name}
@@ -12,6 +13,7 @@ function Navigation({ topics, selectTopic }) {
   ));
   return (
     <div>
+      <AppBar toggleDrawer={toggleDrawer} />
       <h1>
         Temos agora {topics.length} tópicos na lista.
       </h1>
@@ -30,6 +32,7 @@ Navigation.propTypes = {
     })
   ).isRequired,
   selectTopic: PropTypes.func.isRequired,
+  toggleDrawer: PropTypes.func.isRequired,
 };
 
 export default Navigation;

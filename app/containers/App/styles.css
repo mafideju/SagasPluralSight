@@ -1,6 +1,17 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700);
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+  background-color: #e5e5e5;
+}
+
 .container {
   display: block;
+  margin: 10px;
+  padding: 8px;
 }
