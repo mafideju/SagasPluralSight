@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import styles from './styles.css';
 
 
 function Drawer({ items, selectItem, itemLabelAttr, itemKeyAttr, isDrawerOpen }) {
   const itemNodes = items.map(item => (
     <div
-      className={StyleSheet.item}
+      className={styles.item}
       key={item[itemKeyAttr]}
       onClick={() => selectItem(item)}
     >
@@ -14,7 +15,8 @@ function Drawer({ items, selectItem, itemLabelAttr, itemKeyAttr, isDrawerOpen })
     </div>
   ));
   return (
-    <div className={styles.drawer}>
+    <div className={classnames(styles.drawer, { [styles.drawerOpen]: isDrawerOpen })}>
+    {/* { [styles.drawerOpen]: isDrawerOpen } => computed attribute */}
       {itemNodes}
     </div>
   );

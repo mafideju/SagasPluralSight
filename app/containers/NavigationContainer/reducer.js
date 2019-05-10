@@ -1,18 +1,21 @@
 import { fromJS } from 'immutable';
 import {
-  REQUEST_TOPICS_SUCCEEDEED, SELECT_TOPIC,
+  REQUEST_TOPICS_SUCCEEDEED, SELECT_TOPIC, TOGGLE_DRAWER,
 } from './constants';
 
 const initialState = fromJS({
   topics: [],
+  isDrawerOpen: false,
 });
 
 function navigationContainerReducer(state = initialState, action) {
   switch (action.type) {
     case REQUEST_TOPICS_SUCCEEDEED:
-      return state.set('topics', action.topics);
+      return state.setIn(['topics'], action.topics);
     case SELECT_TOPIC:
-      return state.set('selectedTopics', action.topic);
+      return state.setIn(['selectedTopics'], action.topic).set('isDrawerOpen', false);
+    case TOGGLE_DRAWER:
+      return state.setIn(['isDrawerOpen'], !state.get('isDrawerOpen'));
     default:
       return state;
   }
