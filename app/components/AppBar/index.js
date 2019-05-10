@@ -13,8 +13,8 @@ function AppBar({ toggleDrawer }) {
       >
         <FontAwesome className={styles.icon} name="bars" />
       </div>
-      <div className={styles.heading}>Código Diário</div>
-      <div className={styles.linkContainer}>Entrar</div>
+      <div className={styles.heading}>[...]</div>
+      <div className={styles.linkContainer}>Get Log</div>
     </div>
   );
 }

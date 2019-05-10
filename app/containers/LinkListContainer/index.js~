@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { requestLinks } from './actions';
 import selectLinkListContainer from './selectors';
 // import styles from './styles.css';
 import LinkList from '../../components/LinkList';
@@ -17,7 +16,7 @@ const mapStateToProps = selectLinkListContainer();
 
 function mapDispatchToProps(dispatch) {
   return {
-    requestLinks: () => dispatch(requestLinks(dispatch)),
+    dispatch,
   };
 }
 

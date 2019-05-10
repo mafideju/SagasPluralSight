@@ -9,18 +9,18 @@ function setupDb() {
     .value();
 
   const topic1 = {
-    name: 'libraries',
-    description: 'links to useful open source libraries',
+    name: 'Bibliotecas',
+    description: 'Conheça as melhores bibliotecas de JavaScript!!!',
   };
 
   const topic2 = {
-    name: 'apps',
-    description: 'links to new and exciting apps',
+    name: 'Cursos OnLine',
+    description: 'Conheça uma grande forma de adquirir conhecimento em programação!!!',
   };
 
   const topic3 = {
-    name: 'news',
-    description: 'links to programming related news articles',
+    name: 'GitHub',
+    description: 'Versione seus códigos e saiba onde o bug foi introduzido...',
   };
 
 
@@ -29,16 +29,16 @@ function setupDb() {
   db.get('topics').push(topic3).value();
 
   db.get('links').push({
-    description: 'The very library we are working with now',
-    url: 'https://github.com/facebook/react',
+    description: 'Angular Project',
+    url: 'https://angular.io',
     topicName: topic1.name,
     id: uuid(),
     voteCount: 0,
     voters: [],
   }).value();
   db.get('links').push({
-    description: 'Some old videos',
-    url: 'http://tagtree.io',
+    description: 'Conheça o Angular CLI',
+    url: 'https://angular.io/cli',
     topicName: topic1.name,
     id: uuid(),
     voteCount: 0,
@@ -46,16 +46,16 @@ function setupDb() {
   }).value();
 
   db.get('links').push({
-    description: 'An app to manage your finances',
-    url: 'https://22seven.com',
+    description: 'Plural Sight - Level Up',
+    url: 'https://app.pluralsight.com/library/',
     topicName: topic2.name,
     id: uuid(),
     voteCount: 0,
     voters: [],
   }).value();
   db.get('links').push({
-    description: 'Go find some news yourself!',
-    url: 'https://google.com',
+    description: 'GitHub - Built for Developers',
+    url: 'https://github.com/',
     topicName: topic3.name,
     id: uuid(),
     voteCount: 0,

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Link from '../Link';
 // import styles from './styles.css';
 
-function LinkList({ links }) {
+function LinkList({ links, routeTopicName }) {
   const linkNodes = links.map(link => (
     <Link 
       key={link.id}
@@ -15,12 +15,14 @@ function LinkList({ links }) {
 
   return (
     <div>
+      {routeTopicName}
       {linkNodes}
     </div>
   );
 }
 
 LinkList.propTypes = {
+  routeTopicName: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       description: PropTypes.string.isRequired,
